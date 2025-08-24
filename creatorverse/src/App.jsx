@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ShowCreators from './pages/ShowCreators.jsx'
-import ViewCreator from './pages/ViewCreator'
+import ViewCreator from './pages/ViewCreator.jsx'
 import AddCreator from './pages/AddCreator.jsx'
 import EditCreator from './pages/EditCreator.jsx'
 
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <div className="container">
       <header className="topbar">
-        <Link to="/" className="brand">CreatorVerse</Link>
+        <Link to="/" className="brand">Creator Verse</Link>
         <nav>
           <Link to="/creators/new" className="btn">Add Creator</Link>
         </nav>

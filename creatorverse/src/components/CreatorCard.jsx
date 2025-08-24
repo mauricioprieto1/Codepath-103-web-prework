@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom'
 
 export default function CreatorCard({ creator }) {
     if (!creator) return null
-    const img = (image_url && image_url.trim()) || `https://picsum.photos/seed/${id || name}/640/360`
-
     const { id, name, url, description, image_url } = creator
+    const img = (image_url && image_url.trim()) || 'assets/jeff.jpg' || `https://picsum.photos/seed/${id || name}/640/360`
     return (
     <article className="card">
       <Link to={id ? `/creators/${id}` : '#'} aria-label={`View ${name}`}>
