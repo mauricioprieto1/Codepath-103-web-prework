@@ -8,35 +8,27 @@ import ViewCreator from '.pages/ViewCreator'
 import AddCreator from './pages/AddCreator.jsx'
 import EditCreator from './pages/EditCreator.jsx'
 
-function 
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function AppRoutes() {
+  const routes = useRoutes([
+    { path: '/', element: <ShowCreators /> },
+    { path: '/creators/new', element: <AddCreator /> },
+    { path: '/creators/:id', element: <ViewCreator /> },
+    { path: '/creators/:id/edit', element: <EditCreator /> },
+    { path: '*', element: <div style={{padding:16}}>Not found. <Link to="/">Go Home</Link></div> },
+  ])
+  return routes
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="container">
+      <header className="topbar">
+        <Link to="/" className="brand">CreatorVerse</Link>
+        <nav>
+          <Link to="/creators/new" className="btn">Add Creator</Link>
+        </nav>
+      </header>
+      <AppRoutes />
+    </div>
+  )
+}
