@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ShowCreators from './pages/ShowCreators.jsx'
-import ViewCreator from '.pages/ViewCreator'
+import ViewCreator from './pages/ViewCreator'
 import AddCreator from './pages/AddCreator.jsx'
 import EditCreator from './pages/EditCreator.jsx'
 

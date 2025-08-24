@@ -12,6 +12,7 @@ export default function ShowCreators() {
     useEffect(() => {
         async function fetchCreators() {
             setLoading(true)
+            setError(null)
             const {data, error } = await supabase
                 .from('creators')
                 .select('*')
@@ -24,7 +25,7 @@ export default function ShowCreators() {
     },[])
     return ( 
         <main>
-            <div className="hero">
+            <div className="hero" style={{ marginBottom: 16}}>
                 <h1>Creator Verse</h1>
                 <p>Share your favorite creators and manage your list.</p>
                 <Link to="/creators/new" className="btn">Add Creators</Link>
